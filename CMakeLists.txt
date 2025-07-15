@@ -8,7 +8,8 @@ set(CMAKE_C_STANDARD 11)
 set(CMAKE_CXX_SCAN_FOR_MODULES OFF)
 
 # Include board configuration
-add_subdirectory(board/your-board)
+add_subdirectory(board/telemetry-computer)
+add_subdirectory(lib/utils/debug)
 
 add_executable(${PROJECT_NAME})
 
@@ -23,4 +24,5 @@ target_include_directories(${PROJECT_NAME} PRIVATE
 
 target_link_libraries(${PROJECT_NAME} PRIVATE 
     board_config
+    Utils::Debug
 )
